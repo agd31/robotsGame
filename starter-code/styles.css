@@ -1,1 +1,4 @@
-h1{color:red;}
+canvas {
+    border: 2px solid black;
+    background-color: white;
+  }
