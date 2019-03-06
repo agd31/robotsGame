@@ -1,10 +1,10 @@
 function Bumper() {
   this.x = 0;
-  this.y = 200;
+  this.y = 198;
 
 
   this.width = 40;
-  this.height = 40;
+  this.height = 5;
   this.color = 'rgb(112,128,144)'
 }
 
