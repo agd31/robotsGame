@@ -65,12 +65,11 @@ Player.prototype.movePlayer = function() {
     for (var x=40; x<=615; x=x+40){
       ctx.moveTo(x,0);
       ctx.lineTo(x,655);
+      ctx.moveTo(0,x);
+      ctx.lineTo(655,x);
     }
     
-    for (var y=40; y<=615; y=y+40){
-      ctx.moveTo(0,y);
-      ctx.lineTo(655,y);
-    }
+    
     
     ctx.strokeStyle = "#f00";
     ctx.stroke();
