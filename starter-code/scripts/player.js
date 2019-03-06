@@ -1,13 +1,13 @@
 function Player() {
-    this.x = 50;
-    this.y = 50;
+    this.x = 0;
+    this.y = 0;
     this.isMovingRight = false;
     this.isMovingLeft = false;
     this.isMovingUp = false;
     this.isMovingDown = false;
   
-    this.width = 50;
-    this.height = 50;
+    this.width = 40;
+    this.height = 40;
     this.color = 'blue'
   }
   
@@ -62,4 +62,16 @@ Player.prototype.movePlayer = function() {
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.restore();
     
+    for (var x=40; x<=615; x=x+40){
+      ctx.moveTo(x,0);
+      ctx.lineTo(x,655);
+    }
+    
+    for (var y=40; y<=615; y=y+40){
+      ctx.moveTo(0,y);
+      ctx.lineTo(655,y);
+    }
+    
+    ctx.strokeStyle = "#f00";
+    ctx.stroke();
   }

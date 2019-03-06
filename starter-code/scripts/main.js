@@ -1,8 +1,10 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-canvas.height = 500;
-canvas.width = 500;
+canvas.height = 640;
+canvas.width = 640;
 counter = 0;
+
+
 
 var isPause =false;
 var player = new Player();
@@ -20,6 +22,8 @@ function Pause() {
     }
   }.bind(this))
 }
+
+
 
 function game() {
     Pause();
