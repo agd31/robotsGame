@@ -17,16 +17,32 @@ Player.prototype.movePlayer = function() {
   document.onkeydown = function(e) {
     switch(e.keyCode){
       case 39:
-        this.isMovingRight = true;
+      this.isMovingLeft = false;
+      this.isMovingUp = false;
+      this.isMovingDown = false;  
+      this.isMovingRight = true;
+      counter++;
         break
       case 37:
+      this.isMovingRight = false;
+    this.isMovingUp = false;
+    this.isMovingDown = false;
         this.isMovingLeft = true;
+        counter++;
         break
       case 38:
+      this.isMovingRight = false;
+      this.isMovingLeft = false;
+      this.isMovingDown = false;
         this.isMovingUp = true;
+        counter++;
         break
       case 40:
-        this.isMovingDown = true;
+      this.isMovingRight = false;
+    this.isMovingLeft = false;
+    this.isMovingUp = false;
+    this.isMovingDown = true;
+    counter++;
         break
       }
       console.log("Inutil");
