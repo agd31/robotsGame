@@ -9,6 +9,8 @@ counter = 0;
 var isPause =false;
 var player = new Player();
 var bumper = new Bumper();
+var bumper2v = new Bumper2v();
+var playerGreen=new PlayerGreen();
 /*var board = new board();*/
 window.onload =function(){
   game();
@@ -32,7 +34,9 @@ function game() {
     player.draw();
     player.movePlayer();
     bumper.draw();
-    bumper.collision(player);
+    bumper.collisionY(player);
+    bumper2v.draw();
+    bumper2v.collisionX(player);
   }
   
   var interval = setInterval(game, 1000/60);

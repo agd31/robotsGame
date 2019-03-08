@@ -35,7 +35,7 @@ Bumper.prototype.collision = function(player) {
 }
 */
 
-Bumper.prototype.collision = function(player) {
+Bumper.prototype.collisionY = function(player) {
   if(
     player.x + player.width >= this.x && 
     this.x + this.width >= player.x && 
