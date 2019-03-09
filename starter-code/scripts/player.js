@@ -12,33 +12,9 @@ function Player(x,y, color) {
     this.color = color;
   }
   
-//CREAR JUGADORES
-var arrayPlayers=[
-  player1 = new Player(0,0,'blue'),
-  player2 = new Player(200,400,'red'),
-  player3 = new Player(160,80,'green'),
-  player4 = new Player(440,520,'yellow'),
-]
 
-Player.prototype.choosePlayer = function() {
-  //del 49 al 52 mover jugadores
-  document.onkeydown = function(e) {
-    switch(e.keyCode){
-      case 49:
-      player=player1;
-      break
-      case 50:
-      player=player2;
-      break
-      case 51:
-      player=player3;
-      break
-      case 52:
-      player=player4;
-      break
-    }
-  }
-}
+
+
  //mover jugador 
 Player.prototype.movePlayer = function() {
   document.onkeydown = function(e) {
