@@ -16,6 +16,8 @@ window.onload =function(){
   game();
 }
 
+
+//PAUSAR EL JUEGO CON ESPACIO
 function Pause() {
   document.addEventListener('keydown', function(e) {
     switch(e.keyCode) {
@@ -27,8 +29,9 @@ function Pause() {
 }
 
 
-
+//FUNCIÓN PRINCIPAL INICIAR EL JUEGO
 function game() {
+  /*board.draw();*/
   ctx.clearRect(0,0,canvas.width,canvas.height);
   for (var x=40; x<=615; x=x+40){
   ctx.moveTo(x,0);
@@ -41,21 +44,34 @@ function game() {
   Pause();
     /*board.draw();*/
     
-    
+    //PINTAR BUMPER VERTICALES
     for(var i=0;i<bumperVertically.length;i++){
     bumperVertically[i].draw();
-  }
-  for(var i=0;i<bumperHorizontally.length;i++){
+    }
+
+    //PINTAR BUMPER HORIZONTALES
+    for(var i=0;i<bumperHorizontally.length;i++){
     bumperHorizontally[i].draw();
-  }
-  player.draw();
-  player.movePlayer();
+    }
+  
+    //PINTAR JUGADOR
+    player.draw();
+    //MOVER JUGADOR
+    player.movePlayer();
   //playerGreen.draw();
   //playerGreen.movePlayer();
 
-    bumper.collisionY(player);
+   //COLISIÓN BUMPERS horizontales 
+   for(var i=0;i<bumperHorizontally.length;i++){
+    bumperHorizontally[i].collisionY(player);
+    }
+   
     //bumper.collisionY(playerGreen);
-    bumper.collisionX(player);
+    //COLISIÓN BUMPERS VERTICALES
+    for(var i=0;i<bumperVertically.length;i++){
+      bumperVertically[i].collisionX(player);
+      }
+    
     //bumper.collisionX(playerGreen);
   }
   

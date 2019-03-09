@@ -2,20 +2,18 @@
 function Bumper(x, y , width, height ) {
   this.x = x;
   this.y = y;
-
-
   this.width = width;
   this.height = height;
   this.color = 'rgb(112,128,144)'
 }
-
+//pintar el bumper
 Bumper.prototype.draw = function () {
   ctx.beginPath();
   ctx.fillStyle = this.color;
   ctx.fillRect(this.x, this.y, this.width, this.height);
   ctx.closePath();
 }
-
+//array de bumpers verticales
 var bumperVertically=[
   bumper1 = new Bumper(158,0,5,40),
   bumper2 =new Bumper(438,0,5,40),
@@ -43,7 +41,7 @@ var bumperVertically=[
   bumper24 = new Bumper(238,600,5,40),
   bumper25 = new Bumper(478,600,5,40),
   ]
-
+//array de bumpers horizontales
   var bumperHorizontally=[
     bumper26 = new Bumper(0,158,40,5),
     bumper27 = new Bumper(0,438,40,5),
@@ -72,7 +70,47 @@ var bumperVertically=[
     bumper50 = new Bumper(600,398,40,5),
   ] 
 
-/*
+//COLISIÓN BUMPERS HORIZONTALES
+Bumper.prototype.collisionY = function(player) {
+  if(
+    player.x + player.width >= this.x && 
+    this.x + this.width >= player.x && 
+    player.y + player.height >= this.y && 
+    this.y + this.height >= player.y
+    ) {
+      
+      
+      player.isMovingUp=false;
+      player.isMovingDown=false;
+      //colision arriba abajo
+      
+  }
+}
+
+//COLISIÓN BUMPERS VERTICALES
+Bumper.prototype.collisionX = function(player) {
+  if(
+    player.x + player.width >= this.x && 
+    this.x + this.width >= player.x && 
+    player.y + player.height >= this.y && 
+    this.y + this.height >= player.y
+    ) {
+      
+      
+      player.isMovingRight=false;
+      player.isMovingLeft=false;
+      //colision izquierda derecha
+      
+  }
+}
+
+
+
+
+
+
+
+/*MORRALLA
 Bumper.prototype.collision = function(player) {
   if(
     player.x + player.width >= this.x && 
@@ -90,35 +128,3 @@ Bumper.prototype.collision = function(player) {
   }
 }
 */
-
-Bumper.prototype.collisionY = function(player) {
-  if(
-    player.x + player.width >= this.x && 
-    this.x + this.width >= player.x && 
-    player.y + player.height >= this.y && 
-    this.y + this.height >= player.y
-    ) {
-      
-      
-      player.isMovingUp=false;
-      player.isMovingDown=false;
-      //colision arriba abajo
-      
-  }
-}
-Bumper.prototype.collisionX = function(player) {
-  if(
-    player.x + player.width >= this.x && 
-    this.x + this.width >= player.x && 
-    player.y + player.height >= this.y && 
-    this.y + this.height >= player.y
-    ) {
-      
-      
-      player.isMovingRight=false;
-      player.isMovingLeft=false;
-      //colision izquierda derecha
-      
-  }
-}
-

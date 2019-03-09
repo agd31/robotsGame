@@ -73,7 +73,7 @@ Player.prototype.movePlayer = function() {
   
 }
 
-//pintar jugador y tablero
+//pintar jugador
   Player.prototype.draw = function() {
     
     ctx.save();
