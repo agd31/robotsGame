@@ -73,10 +73,10 @@ var bumperVertically=[
 //COLISIÓN BUMPERS HORIZONTALES
 Bumper.prototype.collisionY = function(player) {
   if(
-    player.x + player.width >= this.x && 
-    this.x + this.width >= player.x && 
-    player.y + player.height >= this.y && 
-    this.y + this.height >= player.y
+    player.x + player.width > this.x && 
+    this.x + this.width > player.x && 
+    player.y + player.height > this.y && 
+    this.y + this.height > player.y
     ) {
       
       
@@ -90,10 +90,10 @@ Bumper.prototype.collisionY = function(player) {
 //COLISIÓN BUMPERS VERTICALES
 Bumper.prototype.collisionX = function(player) {
   if(
-    player.x + player.width >= this.x && 
-    this.x + this.width >= player.x && 
-    player.y + player.height >= this.y && 
-    this.y + this.height >= player.y
+    player.x + player.width > this.x && 
+    this.x + this.width > player.x && 
+    player.y + player.height > this.y && 
+    this.y + this.height > player.y
     ) {
       
       
