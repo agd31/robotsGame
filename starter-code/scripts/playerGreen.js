@@ -1,7 +1,6 @@
-//constructor jugador
-function Player() {
-    this.x = 0;
-    this.y = 0;
+function PlayerGreen() {
+    this.x = 200;
+    this.y = 200;
     this.isMovingRight = false;
     this.isMovingLeft = false;
     this.isMovingUp = false;
@@ -9,11 +8,11 @@ function Player() {
   
     this.width = 40;
     this.height = 40;
-    this.color = 'blue'
+    this.color = 'green'
   }
   
- //mover jugador 
-Player.prototype.movePlayer = function() {
+  
+  PlayerGreen.prototype.movePlayer = function() {
 
   document.onkeydown = function(e) {
     switch(e.keyCode){
@@ -49,12 +48,7 @@ Player.prototype.movePlayer = function() {
       
   }.bind(this)
 
-  /*document.onkeyup = function(e) {
-    this.isMovingRight = false;
-    this.isMovingLeft = false;
-    this.isMovingUp = false;
-    this.isMovingDown = false;
-  }.bind(this)*/
+  
 
   /*Derecha, la primera lo mueve la segunda lo para*/
   if(this.isMovingRight === true && this.x+1 + this.width <= canvas.width){this.x += 10};
@@ -72,16 +66,13 @@ Player.prototype.movePlayer = function() {
   if(this.x=1){this.isMovingLeft===false};*/
   
 }
-
-//pintar jugador y tablero
-  Player.prototype.draw = function() {
+PlayerGreen.prototype.draw = function() {
     
     ctx.save();
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.restore();
     
-
-    //cuadriculas tablero
     
+   
   }
