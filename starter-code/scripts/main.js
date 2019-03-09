@@ -71,7 +71,7 @@ function game() {
     for(var i=0;i<bumperVertically.length;i++){
       bumperVertically[i].collisionX(player);
       }
-    
+    win(player);
     //bumper.collisionX(playerGreen);
   }
   

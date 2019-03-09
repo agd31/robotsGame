@@ -78,8 +78,6 @@ Bumper.prototype.collisionY = function(player) {
     player.y + player.height > this.y && 
     this.y + this.height > player.y
     ) {
-      
-      
       player.isMovingUp=false;
       player.isMovingDown=false;
       //colision arriba abajo
