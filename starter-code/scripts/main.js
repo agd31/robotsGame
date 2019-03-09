@@ -53,6 +53,11 @@ function game() {
     for(var i=0;i<bumperHorizontally.length;i++){
     bumperHorizontally[i].draw();
     }
+
+    //PINTAR BUMPER HORIZONTALES
+    for(var i=0;i<arrayGoals.length;i++){
+      arrayGoals[i].draw();
+      }
   
     //PINTAR JUGADOR
     player.draw();
