@@ -13,7 +13,7 @@ function Goal(x, y, width, height, color) {
     ctx.closePath();
   }
   var arrayGoals=[
-    goal1 = new Goal(480,80,32,32, 'green'),
+    goal1 = new Goal(480,40,32,32, 'green'),
     goal2 = new Goal(40,80,32,32, 'red'),
     goal3 = new Goal(200,360,32,32, 'lightblue'),
     goal4 = new Goal(320,400,32,32, 'yellow'),

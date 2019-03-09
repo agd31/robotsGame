@@ -7,7 +7,7 @@ counter = 0;
 
 
 var isPause =false;
-var player = new Player();
+
 // var bumper = new Bumper();
 //var bumper2v = new Bumper2v();
 //var playerGreen = new PlayerGreen();
@@ -54,14 +54,18 @@ function game() {
     bumperHorizontally[i].draw();
     }
 
-    //PINTAR BUMPER HORIZONTALES
+    //PINTAR GOALS
     for(var i=0;i<arrayGoals.length;i++){
       arrayGoals[i].draw();
       }
   
     //PINTAR JUGADOR
-    player.draw();
+    for(var i=0;i<arrayPlayers.length;i++){
+      arrayPlayers[i].draw();
+      }
+    
     //MOVER JUGADOR
+    player.choosePlayer();
     player.movePlayer();
   //playerGreen.draw();
   //playerGreen.movePlayer();
