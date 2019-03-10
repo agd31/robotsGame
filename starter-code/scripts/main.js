@@ -13,15 +13,19 @@ var arrayPlayers=[
 ]
 var player=arrayPlayers[0];
 
-Player.prototype.choosePlayer = function() {
+function choosePlayer(){
   //del 49 al 52 mover jugadores
+  
   document.onkeydown = function(e) {
     switch(e.keyCode){
       case 49:
       player=arrayPlayers[0];
+      console.log("1")
       break
       case 50:
+      console.log("2")
       player=arrayPlayers[1];
+      console.log("2")
       break
       case 51:
       player=arrayPlayers[2];
@@ -29,7 +33,7 @@ Player.prototype.choosePlayer = function() {
       case 52:
       player=arrayPlayers[3];
       break
-    }console.log(blablaba)
+    }console.log("blablaba")
   }
 }
 
@@ -92,7 +96,7 @@ function game() {
       }
     
     //MOVER JUGADOR
-    player.choosePlayer();
+    choosePlayer();
     player.movePlayer();
   //playerGreen.draw();
   //playerGreen.movePlayer();
