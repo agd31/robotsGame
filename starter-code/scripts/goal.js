@@ -18,15 +18,15 @@ function Goal(x, y, width, height, color) {
     goal3 = new Goal(200,360,32,32, 'lightblue'),
     goal4 = new Goal(320,400,32,32, 'yellow'),
 ]
-
-var objetiveGoal=arrayGoals[2];
+var randomnumber = Math.floor(Math.random() * 2);
+var objetiveGoal=arrayGoals[randomnumber];
 
 function win(obj){
-    if(obj.x == arrayGoals[2].x && obj.y == arrayGoals[2].y) {
+    if(obj.x == arrayGoals[randomnumber].x && obj.y == arrayGoals[randomnumber].y) {
         ctx.beginPath()
-        ctx.font = "20px Helvetica";
-        ctx.fillStyle = 'Green'
-        ctx.fillText('SE ACABÓ EL JUEGO', canvas.width / 2, canvas.height / 2)
+        ctx.font = "34px Comic Sans MS";
+        ctx.fillStyle = 'Red'
+        ctx.fillText('SE ACABÓ EL JUEGO', 200, 200)
         ctx.closePath()
       }
     }

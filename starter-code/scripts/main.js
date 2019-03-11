@@ -11,7 +11,7 @@ counter = 0; //va a contar el número de movimientos que se hacen
     player3 = new Player(160,80,'green'),
     player4 = new Player(440,520,'yellow'),
   ]
-  var player=arrayPlayers[0];
+  var player=arrayPlayers[1];
 
 // SWITCH PARA ELEGIR AL JUGADOR QUE SE VA  MOVER 
 
