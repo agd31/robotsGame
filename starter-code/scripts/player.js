@@ -12,13 +12,33 @@ function Player(x,y, color) {
     this.color = color;
   }
   
+  //CREAR JUGADORES
+  var arrayPlayers=[
+    player1 = new Player(0,0,'blue'),
+    player2 = new Player(200,400,'red'),
+    player3 = new Player(160,80,'green'),
+    player4 = new Player(440,520,'yellow'),
+  ]
+  var player=arrayPlayers[1];
 
 
-
- //mover jugador 
-Player.prototype.movePlayer = function() {
+Player.prototype.choosePlayer = function() {
+  //del 49 al 52 mover jugadores
   document.onkeydown = function(e) {
     switch(e.keyCode){
+      case 49:
+      this.player=arrayPlayers[0];
+      break
+      case 50:
+      this.player=arrayPlayers[1];
+      break
+      case 51:
+      this.player=arrayPlayers[2];
+      break
+      case 52:
+      this.player=arrayPlayers[3];
+      break
+    
       case 39:
       this.isMovingLeft = false;
       this.isMovingUp = false;
@@ -83,4 +103,63 @@ Player.prototype.movePlayer = function() {
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.restore();
     
+  }
+
+  Player.prototype.collisionPlayers = function() {
+    //colision del 0 con el resto
+    for(i=1;i<=3;i++){
+      
+      if(
+        arrayPlayers[0].x + arrayPlayers[0].width >= arrayPlayers[i].x && 
+        arrayPlayers[i].x + arrayPlayers[i].width >= arrayPlayers[0].x && 
+        arrayPlayers[0].y + arrayPlayers[0].height >= arrayPlayers[i].y && 
+        arrayPlayers[i].y + arrayPlayers[i].height >= arrayPlayers[0].y
+        ) {
+          if(player.isMovingUp==true || player.isMovingDown==true){
+            player.isMovingUp=false;
+          player.isMovingDown=false;
+          } else{
+            player.isMovingRight=false;
+            player.isMovingLeft=false;
+          }
+        }
+        
+    }
+    //colision del 1 con 2 y 3
+    for(i=2;i<=3;i++){
+      if(
+        arrayPlayers[1].x + arrayPlayers[1].width >= arrayPlayers[i].x && 
+        arrayPlayers[i].x + arrayPlayers[i].width >= arrayPlayers[1].x && 
+        arrayPlayers[1].y + arrayPlayers[1].height >= arrayPlayers[i].y && 
+        arrayPlayers[i].y + arrayPlayers[i].height >= arrayPlayers[1].y
+        ) {
+        
+          if(player.isMovingUp==true || player.isMovingDown==true){
+            player.isMovingUp=false;
+          player.isMovingDown=false;
+          } else{
+            player.isMovingRight=false;
+            player.isMovingLeft=false;
+          }
+        
+        
+        }
+    }
+    //colision del 2 y 3
+    if(
+      arrayPlayers[2].x + arrayPlayers[2].width >= arrayPlayers[3].x && 
+      arrayPlayers[3].x + arrayPlayers[3].width >= arrayPlayers[2].x && 
+      arrayPlayers[2].y + arrayPlayers[2].height >= arrayPlayers[3].y && 
+      arrayPlayers[3].y + arrayPlayers[3].height >= arrayPlayers[2].y
+      ) {
+      
+        if(player.isMovingUp==true || player.isMovingDown==true){
+          player.isMovingUp=false;
+        player.isMovingDown=false;
+        } else{
+          player.isMovingRight=false;
+          player.isMovingLeft=false;
+        }
+      
+      }
   }
