@@ -13,12 +13,20 @@ var arrayPlayers=[
   player4 = new Player(440,520,'yellow'),
 ]
 var player=arrayPlayers[0];
+document.getElementById("key1").style.color = arrayPlayers[0].color;
+document.getElementById("key2").style.color = arrayPlayers[1].color;
+document.getElementById("key3").style.color = arrayPlayers[2].color;
+document.getElementById("key4").style.color = arrayPlayers[3].color;
+document.getElementById("currentRobot").style.color = player.color;
+document.getElementById("currentRobotColor").style.backgroundColor = player.color;
+document.getElementById("moves").innerHTML = "Llevas " + counter + " movimientos"
 
 //ARRANCA TODO AL INICIAR EL JUEGO
 window.onload = function (){
   document.getElementById('botonStart').onclick = function(){
-    document.getElementById('imagenInicial').style.display = 'none';
+  document.getElementById('imagenInicial').style.display = 'none';
   document.getElementById('canvas').style.display = 'block';
+  document.getElementById('indicadores').style.display = 'block';
     game();
   } 
 
@@ -41,7 +49,12 @@ function setListeners(){
         case 52:
         player=arrayPlayers[3];
         break
+
       }
+      document.getElementById("currentRobot").style.color = player.color;
+document.getElementById("currentRobotColor").style.color = player.color;
+document.getElementById("currentRobotColor").style.backgroundColor = player.color;
+document.getElementById("moves").innerHTML = "Llevas " + counter + " movimientos"
   });
 }
 

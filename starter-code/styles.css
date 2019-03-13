@@ -34,4 +34,16 @@ canvas {
         cursor: pointer;
         background-color: #9be52a;
     }
+    #indicadores{
+        display: none;
+    }
+
+    #currentRobotColor{
+        width: 40px;
+        height: 40px;
+    }
+
+    #moves{
+        color:white;
+    }
   
