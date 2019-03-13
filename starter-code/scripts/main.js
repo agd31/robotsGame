@@ -15,9 +15,16 @@ var arrayPlayers=[
 var player=arrayPlayers[0];
 
 //ARRANCA TODO AL INICIAR EL JUEGO
-window.onload =function(){
-  game();
+window.onload = function (){
+  document.getElementById('botonStart').onclick = function(){
+    document.getElementById('imagenInicial').style.display = 'none';
+  document.getElementById('canvas').style.display = 'block';
+    game();
+  } 
+
 }
+
+
 
 function setListeners(){
   document.addEventListener("keydown", function(e){
@@ -94,6 +101,8 @@ for(var i=0;i<arrayPlayers.length;i++){
 
 //FUNCIÓN PRINCIPAL INICIAR EL JUEGO
 function game() {
+  
+  
   createBoard();
   Pause();
   objetiveGoals();
