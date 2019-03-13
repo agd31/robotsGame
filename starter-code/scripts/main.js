@@ -5,8 +5,6 @@ canvas.width = 640;
 counter = 0; //va a contar el número de movimientos que se hacen
 
 
-
-// SWITCH PARA ELEGIR AL JUGADOR QUE SE VA  MOVER 
 //CREAR JUGADORES
 var arrayPlayers=[
   player1 = new Player(0,0,'blue'),

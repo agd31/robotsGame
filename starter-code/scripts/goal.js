@@ -25,8 +25,9 @@ function win(obj){
     if(obj.x == arrayGoals[randomnumber].x && obj.y == arrayGoals[randomnumber].y && obj.color==arrayGoals[randomnumber].color) {
         ctx.beginPath()
         ctx.font = "34px Comic Sans MS";
-        ctx.fillStyle = 'Red'
-        ctx.fillText('SE ACABÓ EL JUEGO', 200, 200)
+        ctx.fillStyle = obj.color;
+        ctx.fillText('SE ACABÓ EL JUEGO', 200, 200);
+        ctx.fillText('HAN SIDO '+counter+ ' MOVIMIENTOS', 150, 400);
         ctx.closePath()
       }
     }

@@ -102,28 +102,3 @@ Bumper.prototype.collisionX = function(player) {
       
   }
 }
-
-
-
-
-
-
-
-/*MORRALLA
-Bumper.prototype.collision = function(player) {
-  if(
-    player.x + player.width >= this.x && 
-    this.x + this.width >= player.x && 
-    player.y + player.height >= this.y && 
-    this.y + this.height >= player.y
-    ) {
-      
-      player.isMovingRight=false;
-      player.isMovingLeft=false;
-      player.isMovingUp=false;
-      player.isMovingDown=false;
-      
-      
-  }
-}
-*/
