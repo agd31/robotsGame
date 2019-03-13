@@ -15,10 +15,10 @@ function Goal(x, y, width, height, color) {
   var arrayGoals=[
     goal1 = new Goal(480,40,32,32, 'green'),
     goal2 = new Goal(40,80,32,32, 'red'),
-    goal3 = new Goal(200,360,32,32, 'lightblue'),
+    goal3 = new Goal(200,360,32,32, 'blue'),
     goal4 = new Goal(320,400,32,32, 'yellow'),
 ]
-var randomnumber = Math.floor(Math.random() * 2);
+var randomnumber = Math.floor(Math.random() * 4);
 var objetiveGoal=arrayGoals[randomnumber];
 
 function win(obj){
