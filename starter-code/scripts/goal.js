@@ -22,7 +22,7 @@ var randomnumber = Math.floor(Math.random() * 2);
 var objetiveGoal=arrayGoals[randomnumber];
 
 function win(obj){
-    if(obj.x == arrayGoals[randomnumber].x && obj.y == arrayGoals[randomnumber].y) {
+    if(obj.x == arrayGoals[randomnumber].x && obj.y == arrayGoals[randomnumber].y && obj.color==arrayGoals[randomnumber].color) {
         ctx.beginPath()
         ctx.font = "34px Comic Sans MS";
         ctx.fillStyle = 'Red'
