@@ -4,7 +4,7 @@ function Bumper(x, y , width, height ) {
   this.y = y;
   this.width = width;
   this.height = height;
-  this.color = 'rgb(112,128,144)'
+  this.color = '#191919'
 }
 //pintar el bumper
 Bumper.prototype.draw = function () {

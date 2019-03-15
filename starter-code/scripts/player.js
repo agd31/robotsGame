@@ -1,4 +1,4 @@
-//constructor jugador
+//constructor robots
 function Player(x,y, color) {
     this.x = x;
     this.y = y;
@@ -18,7 +18,7 @@ function Player(x,y, color) {
 
 
 Player.prototype.choosePlayer = function() {
-  //del 49 al 52 mover jugadores
+  //mover a los robots
   document.onkeydown = function(e) {
     switch(e.keyCode){    
       case 39:
@@ -70,28 +70,33 @@ Player.prototype.choosePlayer = function() {
   
 }
 
-//pintar jugador
+//pintar robots
   Player.prototype.draw = function() {
-    
     ctx.save();
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.restore();
-    
   }
 
   
   //preguntar si hay colisiones
   Player.prototype.questionCollision = function(obj) {
       
-      return (((this.left() === obj.right()) && ((this.top() === obj.top()) && (this.isMovingLeft==true || this.isMovingRight==true))) || 
-                ((this.right() == obj.left()) && ((this.top() == obj.top()) && (this.isMovingLeft==true || this.isMovingRight==true)))|| 
-                ((this.top() == obj.bottom()) && ((this.left() == obj.left()) && (this.isMovingUp==true || this.isMovingDown==true))) || 
-                ((this.bottom() == obj.top()) && ((this.left() == obj.left()) && (this.isMovingUp==true || this.isMovingDown==true)))
+    return (((this.left() === obj.right()) && ((this.top() === obj.top()) && 
+              (this.isMovingLeft==true || this.isMovingRight==true))) || 
+            
+              ((this.right() == obj.left()) && ((this.top() == obj.top()) && 
+              (this.isMovingLeft==true || this.isMovingRight==true)))||
+              
+              ((this.top() == obj.bottom()) && ((this.left() == obj.left()) &&
+              (this.isMovingUp==true || this.isMovingDown==true))) || 
+              
+              ((this.bottom() == obj.top()) && ((this.left() == obj.left()) && 
+              (this.isMovingUp==true || this.isMovingDown==true)))
               )           
   }
 
-  //colisiones jugadores
+  //colisiones robots
   Player.prototype.collisionPlayers = function() {
     
     arrayPlayers.some(function(obj) {

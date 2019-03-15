@@ -7,10 +7,10 @@ counter = 0; //va a contar el número de movimientos que se hacen
 
 //CREAR JUGADORES
 var arrayPlayers=[
-  player1 = new Player(0,0,'blue'),
-  player2 = new Player(200,400,'red'),
-  player3 = new Player(160,80,'green'),
-  player4 = new Player(440,520,'yellow'),
+  player1 = new Player(0,80,'blue'),
+  player2 = new Player(440,520,'#FF00FF'),
+  player3 = new Player(80,480,'green'),
+  player4 = new Player(440,120,'#FFA500'),
 ]
 var player=arrayPlayers[0];
 document.getElementById("key1").style.color = arrayPlayers[0].color;
@@ -27,13 +27,12 @@ window.onload = function (){
   document.getElementById('imagenInicial').style.display = 'none';
   document.getElementById('canvas').style.display = 'block';
   document.getElementById('indicadores').style.display = 'block';
-    game();
-  } 
-
+    game(); 
+  }
 }
 
 
-
+//elegir robots 
 function setListeners(){
   document.addEventListener("keydown", function(e){
       switch(e.keyCode){
@@ -80,7 +79,7 @@ function createBoard(){
    ctx.moveTo(0,x);
     ctx.lineTo(655,x);
   }
-  ctx.strokeStyle = "#f00";
+  ctx.strokeStyle = "rgb(112,128,144)";
   ctx.stroke();
 }
 
@@ -105,7 +104,7 @@ function goalsDrawing(){
   }
 }
 
-//PINTAR JUGADORES
+//PINTAR ROBOTS
 function playerDrawing(){
 for(var i=0;i<arrayPlayers.length;i++){
   arrayPlayers[i].draw();
@@ -114,8 +113,6 @@ for(var i=0;i<arrayPlayers.length;i++){
 
 //FUNCIÓN PRINCIPAL INICIAR EL JUEGO
 function game() {
-  
-  
   createBoard();
   Pause();
   objetiveGoals();
@@ -127,8 +124,6 @@ function game() {
   player.collisionPlayers();
   setListeners();
   
-  
-
    //COLISIÓN BUMPERS horizontales 
    for(var i=0;i<bumperHorizontally.length;i++){
     bumperHorizontally[i].collisionY(player);
