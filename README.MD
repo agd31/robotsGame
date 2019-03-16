@@ -1,3 +1,6 @@
+<img src="Img/robotoss.jpg">
+
+
 #### En el principio, fue la máquina...
 
 # CRAZY ROBOTS
