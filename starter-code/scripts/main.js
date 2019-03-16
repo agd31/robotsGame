@@ -32,6 +32,12 @@ window.onload = function (){
 }
 
 
+document.getElementById("reload").onclick = function() {
+
+  window.location.reload();
+
+}
+
 //elegir robots 
 function setListeners(){
   document.addEventListener("keydown", function(e){
