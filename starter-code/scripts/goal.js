@@ -19,9 +19,9 @@ function Goal(x, y, width, height, color) {
 //METAS  
   var arrayGoals=[
     goal1 = new Goal(480,40,32,32, 'green'),
-    goal2 = new Goal(40,80,32,32, 'FF00FF'),
+    goal2 = new Goal(40,80,32,32, '#FF00FF'),
     goal3 = new Goal(200,360,32,32, 'blue'),
-    goal4 = new Goal(320,400,32,32, 'FFA500'),
+    goal4 = new Goal(320,400,32,32, '#FFA500'),
 ]
 
 //INDICAR METAS A ALCANZAR Y COMPROBAR VICTORIA 
@@ -31,8 +31,8 @@ var objetiveGoal=arrayGoals[randomnumber];
 function win(obj){
     if(obj.x == arrayGoals[randomnumber].x && obj.y == arrayGoals[randomnumber].y 
     && obj.color==arrayGoals[randomnumber].color) {
-        ctx.beginPath()
-        ctx.font = "36px";
+        ctx.beginPath();
+        ctx.font = "36px Arial";
         ctx.fillStyle = obj.color;
         ctx.fillText('SE ACABÓ EL JUEGO', 150, 200);
         ctx.fillText('HAN SIDO '+counter+ ' MOVIMIENTOS', 110, 480);
